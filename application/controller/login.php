@@ -28,7 +28,7 @@ class Login extends Controller
         // if we have POST data to create a new song entry
         if (isset($_POST["submit_checklogin"])) {
             // do addSong() in model/model.php
-            if($_POST["username"]=="student" && $_POST["password"]=="12345"){
+            if($_POST["username"]=="staff" && $_POST["password"]=="12345"){
                 header('location: ' . URL . 'two');
 
             }
