@@ -2,20 +2,14 @@
 
 class person extends Controller
 {
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/songs/index
-     */
     public function index()
 
       { 
         
-        //$getname=$_GET["registration_no"];
-        //$name1=$this->model->getname($getname);
-
+      
         $name=$this->model->getAllPerson();
         
-       // load views.ithin the views we can echo out $songs and $amount_of_songs easily
+    
         require APP . 'view/_templates/header.php';
         require APP . 'view/person/index.php';
         require APP . 'view/_templates/footer.php';
@@ -40,7 +34,7 @@ class person extends Controller
                       $nam=$this->model->searchC($na,$_POST["book_i"]);
 
                         if($nam>0){    
-                    // do addSong() in model/model.php
+              
                             $this->model->addPerson($_POST["student_id"], $_POST["person_name"], $_POST["book_i"],$bookll, $_POST["issued_date"], $_POST["returning_date"]);
                             header('location:' . URL . 'person?mode=success4');
                         }
@@ -63,11 +57,6 @@ class person extends Controller
     {
         $lists=$this->model->selectPerson($sn);
 
-        // gettinpg all songs and amount of songs
-      
-        //$amount_of_songs = $this->model->getAmountOfSongs();
-
-       // load views. within the views we can echo out $songs and $amount_of_songs easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/person/editperson.php';
         require APP . 'view/_templates/footer.php';
@@ -75,7 +64,7 @@ class person extends Controller
 
      public function updatePerson()
     {
-        // if we have POST data to create a new song entry
+    
         if (isset($_POST["submit_updatePerson"])) {
             
             $count1=$this->model->countBookId($_POST["book_i"]);          
@@ -125,18 +114,14 @@ class person extends Controller
                 }
                 else{
                      $lists=$this->model->selectPerson($b);
-                // gettinpg all songs and amount of songs
-              
-                //$amount_of_songs = $this->model->getAmountOfSongs();
-
-               // load views. within the views we can echo out $songs and $amount_of_songs easily
+            
                 require APP . 'view/_templates/header.php';
                 require APP . 'view/person/editPerson.php';
                 require APP . 'view/_templates/footer.php';
                 }
             }    
         if(isset($_GET["yes_delete"])){
-           // $a=implode(",", $_POST["num"]);
+         
             $a= $_GET["num"];
              $this->model->delperson($a);
             header('location: ' . URL . 'person?mode=successd2');
@@ -145,7 +130,7 @@ class person extends Controller
            
         
 
-        // where to go after song has been deleted
+       
         
     }
 

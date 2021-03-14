@@ -2,17 +2,14 @@
 
 class Registration extends Controller
 {
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/songs/index
-     */
+   
     public function index()
 
     { 
            
         $name=$this->model->getRegistration();
         
-       // load views.ithin the views we can echo out $songs and $amount_of_songs easily
+    
         require APP . 'view/_templates/header.php';
         require APP . 'view/registration/index.php';
         require APP . 'view/_templates/footer.php';
@@ -49,7 +46,7 @@ class Registration extends Controller
 
      public function updateRegistration()
     {
-        // if we have POST data to create a new song entry
+     
         if (isset($_POST["submit_update"])) {
   
                     $this->model->updateRegistration($_POST["id"],$_POST["student_id"],$_POST["student_name"], $_POST["address"],$_POST["guardian_name"], $_POST["phone"],$_POST["birth_date"],$_POST["course"], $_POST["enrolled_date"]);
@@ -60,7 +57,7 @@ class Registration extends Controller
 
         
        
-        // where to go after song has been added
+   
           header('location:' . URL . 'registration?mode=success5');
     }
 
@@ -74,11 +71,7 @@ class Registration extends Controller
                 }
                 else{
                      $lists=$this->model->selectRegister($b);
-                // gettinpg all songs and amount of songs
               
-                //$amount_of_songs = $this->model->getAmountOfSongs();
-
-               // load views. within the views we can echo out $songs and $amount_of_songs easily
                 require APP . 'view/_templates/header.php';
                 require APP . 'view/registration/updateRegistration.php';
                 require APP . 'view/_templates/footer.php';
@@ -86,9 +79,9 @@ class Registration extends Controller
         }
       
          
-        // if we have an id of a song that should be deleted
+    
        if(isset($_GET["yes_delete"])){
-           // $a=implode(",", $_POST["num"]);
+          
             $a= $_GET["num"];
           
             $this->model->delRegistration($a);
@@ -96,7 +89,7 @@ class Registration extends Controller
         }
         
 
-        // where to go after song has been deleted
+      
      
     }
 

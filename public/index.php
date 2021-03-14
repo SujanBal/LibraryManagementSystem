@@ -1,14 +1,5 @@
 <?php
 
-/**
- * MINI - an extremely simple naked PHP application
- *
- * @package mini
- * @author Panique
- * @link https://github.com/panique/mini/
- * @license http://opensource.org/licenses/MIT MIT License
- */
-
 // TODO get rid of this and work with namespaces + composer's autoloader
 
 // set a constant that holds the project's folder path, like "/var/www/".
